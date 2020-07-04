@@ -1,5 +1,6 @@
 package DeckDesign;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
 
@@ -8,10 +9,8 @@ public class Deck implements iDeck{
 
     public Deck() { }
 
-    public Deck(int numberOfCards) {
-        for (int i=0; i<numberOfCards; i++) {
-            //cards.push(CardFactory.createCard(i));
-        }
+    public Deck(Suit suit ,Rank rank ){
+            cards.push(Card.createCard(suit,rank));
     }
     @Override
     public void shuffle() {
@@ -43,5 +42,8 @@ public class Deck implements iDeck{
     public Card addCard(Card c) {
         this.cards.push(c);
         return c;
+    }
+    public void printCard(Card card){
+        System.out.print("The selected card is" + card);
     }
 }

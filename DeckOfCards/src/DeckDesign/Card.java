@@ -1,5 +1,8 @@
 package DeckDesign;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Card implements Comparable<Card>{
     private Suit suit;
     private Rank rank;
@@ -14,6 +17,11 @@ public class Card implements Comparable<Card>{
     }
     public Rank getRank(){
         return rank;
+    }
+
+    static  Card createCard(Suit suit,Rank rank){
+       Card card=new Card(suit,rank) ;
+       return card;
     }
     @Override
     public int compareTo(Card card2) {
